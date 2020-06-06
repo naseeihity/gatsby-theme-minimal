@@ -1,13 +1,9 @@
 const mdxFeed = require("gatsby-plugin-mdx/feed");
 
-module.exports = ({
-  contentPath = "content",
-  basePath = "/",
-  trackingId = "",
-}) => ({
+module.exports = ({ contentPath = "content" }) => ({
   siteMetadata: {
     title: `WebSite title`,
-    sutTitle: ["WebSite subTitle"],
+    subTitle: ["WebSite subTitle"],
     description: `A description of your website.`,
     keywords: ["blog", "gatsby", "theme", "naseeihity"],
     author: `@authorName`,
@@ -15,9 +11,6 @@ module.exports = ({
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-plugin-mdx",
       options: {
@@ -27,21 +20,19 @@ module.exports = ({
           { resolve: "gatsby-remark-prismjs" },
           { resolve: "gatsby-remark-smartypants" },
         ],
-        remarkPlugins: [require(`remark-math`)],
-        rehypePlugins: [require(`rehype-katex`)],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: contentPath,
+        name: `blog`,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-              linkImagesToOriginal: false,
-            },
-          },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
@@ -53,13 +44,6 @@ module.exports = ({
             resolve: "gatsby-remark-prismjs",
             options: {
               inlineCodeMarker: "÷",
-            },
-          },
-          {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-              path: contentPath,
-              name: `content`,
             },
           },
           "gatsby-remark-copy-linked-files",
@@ -81,11 +65,5 @@ module.exports = ({
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     "gatsby-plugin-offline",
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: trackingId,
-      },
-    },
   ],
 });

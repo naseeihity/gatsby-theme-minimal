@@ -4,8 +4,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 
-import GitTalk from "../components/gittalk";
-import "katex/dist/katex.min.css";
 import mainStyle from "../style/main.module.css";
 
 class BlogPostTemplate extends React.Component {
@@ -13,7 +11,6 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const subTitle = this.props.data.site.siteMetadata.subTitle;
-    const gitTalk = this.props.data.site.siteMetadata.gitTalk;
     const { previous, next } = this.props.pageContext;
 
     return (
@@ -57,11 +54,6 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <GitTalk
-          title={siteTitle}
-          location={this.props.location}
-          options={gitTalk}
-        />
       </Layout>
     );
   }
@@ -74,14 +66,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
         subTitle
-        gitTalk {
-          id
-          secret
-          repo
-          owner
-        }
+        author
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {
