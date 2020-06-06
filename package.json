@@ -1,14 +1,9 @@
 {
   "name": "gatsby-theme-coaco",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
-  "author": "naseeihity <citizenshipsss49@gmail.com>",
+  "author": "Coaco <citizenshipsss492gmail.com> (@Naseeihity)",
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "clean": "gatsby clean"
-  },
   "peerDependencies": {
     "gatsby": "^2.6.0",
     "react": "^16.8.2",

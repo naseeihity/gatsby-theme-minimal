@@ -5,7 +5,6 @@ import { MDXProvider } from "@mdx-js/react";
 import Image from "./ImageCustom";
 import Header from "./header";
 import Footer from "./footer";
-import "../style/prism-light.css";
 import "../style/layout.css";
 import "../style/typo.css";
 import "../style/custom.css";
