@@ -41,7 +41,6 @@ h3 + small {
 
 h1 + small {
   display: inline-block;
-  margin-bottom: 2rem;
 }
 
 hr {

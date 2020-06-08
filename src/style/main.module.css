@@ -27,6 +27,10 @@
   color: #ccc;
 }
 
+.post {
+  margin-top: 1.8rem;
+}
+
 .post h1 {
   margin: 2.1rem 0;
 }

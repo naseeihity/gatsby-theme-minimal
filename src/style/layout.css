@@ -655,8 +655,8 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  overflow: auto;
-  padding: 1.3125rem;
+  overflow: hidden;
+  padding: 0.3125rem;
 }
 
 pre[class*="language-"]::-moz-selection {
@@ -768,10 +768,8 @@ pre[data-line] {
 }
 
 .gatsby-highlight {
-  margin-bottom: 1.75rem;
-  margin-left: -1.3125rem;
-  margin-right: -1.3125rem;
-  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  border-radius: 4px;
   background: #011627;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
